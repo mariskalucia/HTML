@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Jansma Elektronica</title>
+        <link rel="stylesheet" href="/stijlen/stijl.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/afbeeldingen/thumbnail.png">
+    </head>
+    <body>
+        <header>
+            <img src="/afbeeldingen/logo jansma.png" alt="Jansma Elektronica logo">
+            <nav>
+                <ul id="menu">
+                    <li class="inhoud"><a href="index.html">Homepage</a></li>
+                    <li class="inhoud"><a href="producten.html">Producten</a></li>
+                    <li class="inhoud"><a href="diensten.html">Diensten</a></li>
+                    <li class="inhoud"><a href="overons.html">Over ons</a></li>
+                    <li class="inhoud"><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section> 
+        <h1>Welkom op de website van Jansma Elektronica</h1>
+
+        <p>Bij ons vindt u alle elektronische apparaten voor de laagste prijzen.</p>
+        &nbsp;
+        <h2>Wij leveren u onder andere:</h2>
+        
+        <ul>
+            <li>Televisies</li>
+            <li>Smartphones</li>
+            <li>Netwerkapparatuur</li>
+            <li>Computers</li>
+            <li>Laptops</li>
+            <li>IP-telefonie</li>
+        </ul>
+        &nbsp;
+        <p><strong>Ook voor service en onderhoud kunnen wij u van dienst zijn!<br>
+        Neem contact met ons op voor de mogelijkheden of kom langs in onze winkel!</strong></p>
+        </section>
+        <footer>
+            <p>©2020 Jansma Elektronica</p>
+        </footer>
+    </body>
+</html>

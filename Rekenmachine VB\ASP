@@ -1,0 +1,120 @@
+   #Back-end
+   
+   Protected Sub btn_Click(sender As Object, e As EventArgs)
+        If sender.Text = "1" Then
+            txtInput.Text += "1"
+
+        ElseIf sender.Text = "2" Then
+            txtInput.Text += "2"
+
+        ElseIf sender.Text = "3" Then
+            txtInput.Text += "3"
+
+        ElseIf sender.Text = "4" Then
+            txtInput.Text += "4"
+
+        ElseIf sender.Text = "5" Then
+            txtInput.Text += "5"
+
+        ElseIf sender.Text = "6" Then
+            txtInput.Text += "6"
+
+        ElseIf sender.Text = "7" Then
+            txtInput.Text += "7"
+
+        ElseIf sender.Text = "8" Then
+            txtInput.Text += "8"
+
+        ElseIf sender.Text = "9" Then
+            txtInput.Text += "9"
+
+        ElseIf sender.Text = "0" Then
+            txtInput.Text += "0"
+
+        ElseIf sender.Text = "x" Then
+            txtInput.Text += "x"
+
+        ElseIf sender.Text = "+" Then
+            txtInput.Text += "+"
+
+        ElseIf sender.Text = "-" Then
+            txtInput.Text += "-"
+
+        ElseIf sender.Text = "/" Then
+            txtInput.Text += "/"
+
+        ElseIf sender.Text = "C" Then
+            txtInput.Text = String.Empty
+            Dim strGetal1 = String.Empty
+
+        ElseIf sender.Text = "=" Then
+            'txtInput.Text = "="
+
+            Dim strGetal As String = ""
+            Dim opert As String = ""
+
+            Dim g As New List(Of Integer)
+            '25, 10, 23, 65
+
+            Dim o As New List(Of String)
+            '+, -, -, /, x
+
+            For Each i As Char In txtInput.Text
+                If IsNumeric(i) Then 'returns 1/true
+                    strGetal += i
+
+                Else 'returns 0/false
+                    If IsNumeric(strGetal) Then
+                        g.Add(CInt(strGetal))
+                    End If
+                    strGetal = String.Empty
+
+                    opert += i
+                    o.Add(opert)
+                    opert = String.Empty
+                End If
+            Next
+
+            If CInt(strGetal) >= 0 Then
+                g.Add(CInt(strGetal))
+            End If
+
+            For Each f As String In o
+                    Select Case f
+                        Case "+"
+                            g(0) = g(0) + g(1)
+                            g.RemoveAt(1)
+
+                        Case "-"
+                            g(0) = g(0) - g(1)
+                            g.RemoveAt(1)
+
+                        Case "x"
+                            g(0) = g(0) * g(1)
+                            g.RemoveAt(1)
+
+                        Case "/"
+                            g(0) = g(0) / g(1)
+                            g.RemoveAt(1)
+
+                    End Select
+                Next
+                txtInput.Text = g(0)
+            End If
+    End Sub
+
+#Front-end
+
+<asp:TextBox Width="413px" BorderWidth="5px" BackColor="WhiteSmoke" BorderColor="SlateGray" ForeColor="SlateGray"  id="txtInput" runat="server" Style="margin-bottom: 5px;" ></asp:TextBox>
+
+<div class="d-grid gap-2 d-md-block">
+    <asp:button Width="100px" BackColor="WhiteSmoke" BorderColor="SlateGray" ForeColor="SlateGray" ID="btn1" runat="server" Text="1" Style="margin-bottom: 5px;" OnClick="btn_Click"/>
+    <asp:button Width="100px" BackColor="WhiteSmoke" BorderColor="SlateGray" ForeColor="SlateGray" ID="btn2" runat="server" Text="2" Style="margin-bottom: 5px;" OnClick="btn_Click"/>
+    <asp:button Width="100px" BackColor="WhiteSmoke" BorderColor="SlateGray" ForeColor="SlateGray" ID="btn3" runat="server" Text="3" Style="margin-bottom: 5px;" OnClick="btn_Click"/>
+    <asp:button Width="100px" BackColor="WhiteSmoke" BorderColor="SlateGray" ForeColor="SlateGray" ID="btnk" runat="server" Text="x" Style="margin-bottom: 5px;" OnClick="btn_Click"/>
+</div>
+
+<div class="d-grid gap-2 d-md-block">
+    <asp:button Width="100px" BackColor="WhiteSmoke" BorderColor="SlateGray" ForeColor="SlateGray" ID="btn4" runat="server" Text="4" Style="margin-bottom: 5px;" OnClick="btn_Click"/>
+    <asp:button Width="100px" BackColor="WhiteSmoke" BorderColor="SlateGray" ForeColor="SlateGray" ID="btn5" runat="server" Text="5" Style="margin-bottom: 5px;" OnClick="btn_Click"/>
+</div>
